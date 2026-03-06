@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Briefcase, GraduationCap } from "lucide-react"
+import { Briefcase, GraduationCap, Users, ShoppingBag } from "lucide-react"
 import { useLang, t } from "@/lib/language-context"
 
 const experiences = [
@@ -29,6 +29,32 @@ const experiences = [
     desc_zh: "大学生艺术团活动部副部长。",
     desc_en:
       "Vice President of the Activity Dept., Student Art Troupe.",
+  },
+  {
+    type: "practice" as const,
+    period_zh: "校园与社会实践",
+    period_en: "Campus & Social Practice",
+    title_zh: "电商直播带货",
+    title_en: "E-commerce Livestreaming",
+    org_zh: "",
+    org_en: "",
+    desc_zh:
+      "负责直播全流程运营，合作完成产品卖点提炼、直播脚本策划、现场节奏把控，具备成熟的内容表达、流量运营与用户转化思维，单场直播获赞3.1万+，直播间平均停留时长增长30%+，活动期间个人带货销量位列团队第一。",
+    desc_en:
+      "Managed full-cycle livestream operations, including product selling point extraction, script planning, and live pacing. Demonstrated strong content delivery, traffic operation, and user conversion skills. Achieved 31k+ likes in a single session, increased average view duration by 30%+, and ranked first in personal sales within the team.",
+  },
+  {
+    type: "practice" as const,
+    period_zh: "校园与社会实践",
+    period_en: "Campus & Social Practice",
+    title_zh: "营销活动",
+    title_en: "Marketing Campaigns",
+    org_zh: "",
+    org_en: "",
+    desc_zh:
+      "主导校园市场拓展与品牌推广活动，高效完成用户触达、需求挖掘与活动转化，单场活动有效获客150+，在同期营销活动中销量排名第一。",
+    desc_en:
+      "Led campus market expansion and brand promotion. Efficiently executed user outreach, demand discovery, and conversion. Acquired 150+ valid leads in a single event and ranked first in sales among concurrent marketing campaigns.",
   },
 ]
 
@@ -70,8 +96,12 @@ function TimelineItem({
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary">
           {item.type === "work" ? (
             <Briefcase className="h-4 w-4" />
-          ) : (
+          ) : item.type === "education" ? (
             <GraduationCap className="h-4 w-4" />
+          ) : item.title_en === "E-commerce Livestreaming" ? (
+            <ShoppingBag className="h-4 w-4" />
+          ) : (
+            <Users className="h-4 w-4" />
           )}
         </div>
         {index < total - 1 && (
