@@ -1,50 +1,17 @@
-import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Yin Xiangkun - Digital Marketing Portfolio',
   description: '尹相坤的个人简历与作品集 | 数字营销管培生 / 品牌数字化运营',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
-export const viewport: Viewport = {
-  themeColor: '#1a1a2e',
-  userScalable: true,
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function Page() {
   return (
-    <html lang="zh-CN">
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl font-bold mb-4">欢迎来到我的个人主页</h1>
+      <p className="text-muted-foreground">
+        页面内容已准备好，请在此处引入你的各个组件（如 HeroSection, ProjectsSection 等）。
+      </p>
+    </main>
   )
 }
