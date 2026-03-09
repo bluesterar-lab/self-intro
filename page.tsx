@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-4">
+    <main className="min-h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-3xl font-bold mb-4">欢迎来到我的个人主页</h1>
       <p className="text-muted-foreground">
-        页面内容已准备好，请在此处引入你的各个组件（如 HeroSection, ProjectsSection 等）。
+        页面基础框架已修复完毕，您可以开始在这里添加您的具体组件了。
       </p>
     </main>
   )
