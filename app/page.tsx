@@ -1,4 +1,9 @@
 import type { Metadata } from 'next'
+import { HeroSection } from '@/hero-section'
+import { CompetenciesSection } from '@/competencies-section'
+import { ProjectsSection } from '@/projects-section'
+import { FooterSection } from '@/footer-section'
+import { Navbar } from '@/navbar' // 如果你有导航栏的话
 
 export const metadata: Metadata = {
   title: 'Yin Xiangkun - Digital Marketing Portfolio',
@@ -7,11 +12,19 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-3xl font-bold mb-4">欢迎来到我的个人主页</h1>
-      <p className="text-muted-foreground">
-        页面基础框架已修复完毕，您可以开始在这里添加您的具体组件了。
-      </p>
-    </main>
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* 顶部导航 */}
+      <Navbar />
+      
+      {/* 主体内容区 */}
+      <main className="flex-1">
+        <HeroSection />
+        <CompetenciesSection />
+        <ProjectsSection />
+      </main>
+
+      {/* 底部信息 */}
+      <FooterSection />
+    </div>
   )
 }
