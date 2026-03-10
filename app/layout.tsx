@@ -1,4 +1,4 @@
-import './globals (2).css' // 注意这里要和你的 CSS 文件名一致
+import './globals.css' // 注意这里要和你的 CSS 文件名一致
 import { LanguageProvider } from './language-context'
 
 export default function RootLayout({
