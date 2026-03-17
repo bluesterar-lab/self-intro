@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
-import { Navbar } from '@/navbar'
-import { HeroSection } from '@/hero-section'
-import { CompetenciesSection } from '@/competencies-section'
-import { ProjectsSection } from '@/projects-section'
-import { FooterSection } from '@/footer-section'
+import { Navbar } from '@/theme-provider'
+import { HeroSection } from '@/projects-section'
+import { CompetenciesSection } from '@/footer-section'
+import { ProjectsSection } from '@/accordion'
+import { FooterSection } from '@/navbar'
+// 如果你想展示实习经历，还可以加上：
+// import { ExperienceSection } from '@/hero-section'
 
 export const metadata: Metadata = {
   title: 'Yin Xiangkun - Digital Marketing Portfolio',
