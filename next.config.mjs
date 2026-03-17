@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // 必须开启
+  output: 'export', // 开启静态网页导出，Cloudflare 必需
   typescript: {
-    ignoreBuildErrors: true, // 忽略 TS 错误
+    ignoreBuildErrors: true, // 忽略所有 TypeScript 报错
   },
   eslint: {
-    ignoreDuringBuilds: true, // 新增：忽略 ESLint 错误，防止部署被卡
+    ignoreDuringBuilds: true, // 🌟 核心杀手锏：无视所有残缺文件产生的 ESLint 报错强制打包！
   },
   images: {
-    unoptimized: true, // 静态导出必须
+    unoptimized: true, 
   },
 }
 
