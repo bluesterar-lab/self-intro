@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-// 核心修复：强行把错乱的路径和组件对应起来
 import { Navbar } from '@/theme-provider'
 import { HeroSection } from '@/projects-section'
 import { CompetenciesSection } from '@/footer-section'
 import { ProjectsSection } from '@/accordion'
+import { ExperienceSection } from '@/hero-section' 
 import { FooterSection } from '@/navbar'
 
 export const metadata: Metadata = {
@@ -13,12 +13,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />
       <main className="flex-1">
         <HeroSection />
         <CompetenciesSection />
         <ProjectsSection />
+        <ExperienceSection /> 
       </main>
       <FooterSection />
     </div>
